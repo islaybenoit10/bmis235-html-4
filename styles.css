@@ -1,14 +1,10 @@
-/* =====================================================================
-   styles.css  ·  YOUR BRAND
-   ---------------------------------------------------------------------
-   This one file is your brand guide. Every page that links to it gets
-   the same font, the same colors and the same spacing.
-   Change a color here once, and every page changes.
 
-   Use the same font and colors you picked for your Excel menu images,
-   so the menu and the pages look like one brand.
-   ===================================================================== */
+/* =========================================
+   BMIS 235 - THE ISLAY EDIT
+   Main Website Stylesheet
+   ========================================= */
 
+/* GENERAL PAGE STYLE */
 body {
     font-family: Georgia, "Times New Roman", serif;
     background-color: #f4efe6;
@@ -17,35 +13,50 @@ body {
     padding: 0 20px 40px 20px;
 }
 
-/* the menu at the top of every page */
+/* PREVENT IMAGES FROM OVERFLOWING */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* NAVIGATION MENU */
 nav {
     background-color: #2b5d8c;
     padding: 14px;
     text-align: center;
     border-radius: 15px;
-}
+    margin: 0 auto 20px auto;
 }
 
-/* every image inside the menu is forced to the same height.
-   If your images still look different sizes, their WIDTHS are
-   different: go back to Excel and make every cell the same size. */
 nav img {
     height: 50px;
+    width: auto;
+    max-width: none;
     margin: 4px;
     vertical-align: middle;
 }
 
-/* no underline or border around the image links */
 nav a {
     text-decoration: none;
 }
 
+nav img:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* HEADINGS */
 h1 {
     color: #2b5d8c;
     text-align: center;
     font-size: 40px;
 }
 
+h2 {
+    text-align: center;
+}
+
+/* PARAGRAPHS */
 p {
     max-width: 600px;
     margin: 20px auto;
@@ -53,6 +64,7 @@ p {
     line-height: 1.5;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     font-size: 14px;
@@ -60,13 +72,7 @@ footer {
     margin-top: 40px;
 }
 
-
-nav img:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
-}
-
-/* styles all links across the website */
+/* LINKS */
 a {
     color: #2b5d8c;
     font-weight: bold;
@@ -76,47 +82,53 @@ a:hover {
     color: #d49b42;
 }
 
+/* =========================================
+   BANNER
+   ========================================= */
 
-/* BANNER */
 .blk-banner {
-    background-color: #2b5d8c;   /* change to your brand color */
+    background-color: #2b5d8c;
     color: white;
     text-align: center;
     padding: 60px 20px;
     border-radius: 12px;
     margin: 20px auto;
-    max-width: 900px;
+    max-width: 1100px;
 }
-.blk-banner h2 { font-size: 40px; margin: 0 0 10px 0; }
-.blk-banner p { font-size: 20px; margin: 0 auto 24px auto; }
+
+.blk-banner h2 {
+    font-size: 40px;
+    margin: 0 0 10px 0;
+}
+
+.blk-banner p {
+    font-size: 20px;
+    margin: 0 auto 24px auto;
+}
+
 .blk-button {
     display: inline-block;
     background-color: white;
-    color: #2b5d8c;              /* same brand color */
+    color: #2b5d8c;
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* FAQ */
-.blk-faq { max-width: 600px; margin: 30px auto; }
-.blk-faq details {
-    border: 2px solid #dddddd;
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin-bottom: 10px;
-    background-color: white;
-}
-/* CARDS */
+/* =========================================
+   CARDS
+   ========================================= */
+
 .blk-cards {
     display: flex;
-    flex-wrap: wrap;             /* lets the cards stack on a phone */
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin: 30px auto;
     max-width: 900px;
 }
+
 .blk-card {
     flex: 1 1 240px;
     background-color: white;
@@ -125,30 +137,126 @@ a:hover {
     overflow: hidden;
     text-align: center;
 }
-.blk-card img { width: 100%; height: 160px; object-fit: cover; }
-.blk-card h3 { margin: 14px 0 6px 0; }
-.blk-card p { margin: 0 16px 18px 16px; }
-.blk-gallery figure { margin: 0; }
+
+.blk-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.blk-card h3 {
+    margin: 14px 0 6px 0;
+}
+
+.blk-card p {
+    margin: 0 16px 18px 16px;
+}
+
+/* =========================================
+   PHOTO GALLERY
+   ========================================= */
+
+.blk-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.blk-gallery figure {
+    margin: 0;
+    text-align: center;
+}
+
 .blk-gallery img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;           /* crops photos to the same shape */
+    height: 220px;
+    object-fit: cover;
     border-radius: 10px;
 }
-.blk-gallery figcaption { text-align: center; font-size: 15px; margin-top: 6px; }
 
+.blk-gallery figcaption {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 6px;
+}
 
-/* TABLE */
+/* =========================================
+   QUESTIONS AND ANSWERS
+   ========================================= */
+
+.blk-faq {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.blk-faq details {
+    border: 2px solid #dddddd;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.blk-faq summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.blk-faq p {
+    margin: 10px 0 0 0;
+}
+
+/* =========================================
+   TABLE
+   ========================================= */
+
 .blk-table {
-    border-collapse: collapse;   /* removes the double lines */
+    border-collapse: collapse;
     margin: 30px auto;
     width: 100%;
     max-width: 600px;
 }
+
 .blk-table th {
-    background-color: #2b5d8c;   /* your brand color */
+    background-color: #2b5d8c;
     color: white;
     text-align: left;
 }
-.blk-table th, .blk-table td { padding: 10px 14px; border-bottom: 1px solid #dddddd; }
-.blk-table tr:nth-child(even) td { background-color: #f2f2f2; }  /* stripes */
+
+.blk-table th,
+.blk-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.blk-table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+/* =========================================
+   MOBILE SCREEN ADJUSTMENTS
+   ========================================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 10px 30px 10px;
+    }
+
+    nav img {
+        height: 35px;
+    }
+
+    .blk-banner {
+        padding: 40px 15px;
+    }
+
+    .blk-banner h2 {
+        font-size: 30px;
+    }
+
+    .blk-gallery {
+        grid-template-columns: 1fr;
+    }
+}
